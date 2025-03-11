@@ -1,0 +1,70 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: antiquewhite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 10px;
+}
+
+.container{
+    padding: 20px;
+    height: auto;
+    width: auto;
+    border: 2px solid;
+}
+
+.container div{
+    margin-top: 20px;
+}
+
+.heading{
+    text-align: center;
+}
+
+.chance_score{
+    display: flex;
+    justify-content: space-around;
+}
+
+.word{
+    text-align: center;
+}
+
+.input{
+    text-align: center;
+}
+
+.input input{
+    width: 20pc;
+    height: 40px;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.input input[placeholder]{
+    font-size: 20px;
+}
+
+.option p{
+    margin: 20px;
+}
+
+.buttons{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.buttons button{
+    height: 50px;
+    width: 150px;
+    font-size: 25px;
+    margin: 10px;
+}
