@@ -82,16 +82,19 @@ function generateRandomWord() {
     if (turn < 5) {
         random_word = easy_words[random_number].name;
         hint = easy_words[random_number].hint;
-    }else if(turn >= 5 && turn < 10){
+    } else if (turn >= 5 && turn < 10) {
         random_word = normal_words[random_number].name;
         hint = normal_words[random_number].hint;
-    }else if(turn >= 10 && turn < 15){
+    } else if (turn >= 10 && turn < 15) {
         random_word = hard_words[random_number].name;
         hint = hard_words[random_number].hint;
-    }else if(turn >= 15 && turn < 20){
+    } else if (turn >= 15 && turn < 20) {
         random_word = expert_words[random_number].name;
         hint = expert_words[random_number].hint;
-    }else{
+    } else {
+        user_word.innerText = `GUESS WORD: `
+        nextButton.style.display = "none";
+        finalScore.style.display = "block";
         message.innerHTML = "you complete the test......."
     }
 
@@ -148,7 +151,7 @@ answerButton.addEventListener('click', () => {
     if (chanceValue > 2) {
         chanceValue -= 2;
         user_chance = chance.innerText = `Chance Left: ${chanceValue}`
-        showAnswer.innerHTML = `ANSWER: ${(easy_words[random_number].name)}`
+        showAnswer.innerHTML = `ANSWER: ${random_word}`
     } else {
         showAnswer.innerHTML = `You have less than or equal to 2 chances.`
     }
@@ -186,9 +189,14 @@ function loss() {
 finalScore.addEventListener('click', () => {
     chanceValue = 10;
     user_chance = chance.innerText = `Chance Left: ${chanceValue}`
+    scoreValue = 0;
+    user_score = score.innerText = `Score: ${scoreValue}`
     inputBox.disabled = false;
     nextButton.style.display = "block";
     finalScore.style.display = "none";
+    done_word = []
+    turn = 0;
+    message.innerHTML = ""
     generateRandomWord();
 })
 generateRandomWord();
